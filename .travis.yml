@@ -9,9 +9,7 @@ script:
 - docker build -t uptospace/rpi3-aiyvoice .
 # push image
 - >
-  if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-    docker tag uptospace/rpi3-aiyvoice uptospace/rpi3-aiyvoice:3.5.5
-    docker push uptospace/rpi3-aiyvoice:3.5.5
-    docker push uptospace/rpi3-aiyvoice
-  fi
+  docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  docker tag uptospace/rpi3-aiyvoice uptospace/rpi3-aiyvoice:3.5.5
+  docker push uptospace/rpi3-aiyvoice:3.5.5
+  docker push uptospace/rpi3-aiyvoice
