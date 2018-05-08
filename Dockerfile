@@ -1,4 +1,4 @@
-FROM uptospace/rpi3-python:3.6.5
+FROM uptospace/rpi3-python:3.5.5
 
 # Set our working directory
 WORKDIR /usr/app
