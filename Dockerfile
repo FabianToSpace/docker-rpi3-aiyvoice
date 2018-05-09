@@ -29,7 +29,7 @@ COPY . ./
 ENV INITSYSTEM on
 
 # Install Requirements
-RUN sudo apt-get -y install alsa-base alsa-utils rsync libttspico-utils ntpdate
+RUN sudo apt-get -y install alsa-base alsa-utils rsync libttspico-utils ntpdate libatlas-base-dev
 
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r /requirements.txt -i https://www.piwheels.org/simple --extra-index-url https://pypi.org/simple
