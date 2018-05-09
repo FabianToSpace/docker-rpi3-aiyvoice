@@ -28,10 +28,12 @@ COPY . ./
 # switch on systemd init system in container
 ENV INITSYSTEM on
 
+RUN apt update && apt install libatlas-base-dev python3-pip
+
 # Install Requirements
 RUN sudo apt-get -y install alsa-base alsa-utils rsync libttspico-utils ntpdate libatlas-base-dev
 
 # pip install python deps from requirements.txt on the resin.io build server
-RUN pip install -r /requirements.txt -i https://www.piwheels.org/simple --extra-index-url https://pypi.org/simple
+RUN pip3 install -r /requirements.txt -i https://www.piwheels.org/simple --extra-index-url https://pypi.org/simple
 
 CMD ["echo","'No CMD command was set in Dockerfile! Details about CMD command could be found in Dockerfile Guide section in our Docs. Here's the link: http://docs.resin.io/deployment/dockerfile"]
